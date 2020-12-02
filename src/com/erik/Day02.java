@@ -22,4 +22,17 @@ public class Day02 {
         }
         return numberOfValidPasswords;
     }
+
+    public int part2(String[] input) {
+        int numberOfValidPasswords = 0;
+
+        for (String data : input) {
+            myEntry entry = myEntry.createFromString(data);
+
+            if ((entry.password.charAt(entry.rangeLow - 1) == entry.letter.charAt(0) && entry.password.charAt(entry.rangeHigh - 1) != entry.letter.charAt(0)) || (entry.password.charAt(entry.rangeLow - 1) != entry.letter.charAt(0) && entry.password.charAt(entry.rangeHigh - 1) == entry.letter.charAt(0))) {
+                numberOfValidPasswords++;
+            }
+        }
+        return numberOfValidPasswords;
+    }
 }

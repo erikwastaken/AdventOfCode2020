@@ -7,8 +7,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class InputProvider {
-    private static String directoryPath = "/Users/erikschwab/Documents/Java/AdventOfCode/InputFiles/";//"../InputFiles/";
-
+    private static final String directoryPath = "InputFiles/";
     public String[] get(String filename) {
         List<String> resultList = new ArrayList<>();
         try {

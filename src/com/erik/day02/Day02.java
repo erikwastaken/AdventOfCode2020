@@ -1,4 +1,4 @@
-package com.erik;
+package com.erik.day02;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

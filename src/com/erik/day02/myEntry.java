@@ -1,4 +1,4 @@
-package com.erik;
+package com.erik.day02;
 
 public class myEntry {
     public int rangeLow;

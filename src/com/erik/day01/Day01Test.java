@@ -1,4 +1,4 @@
-package com.erik;
+package com.erik.day01;
 
 import org.junit.jupiter.api.Test;
 

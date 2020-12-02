@@ -1,4 +1,4 @@
-package com.erik;
+package com.erik.day01;
 
 import java.util.Arrays;
 

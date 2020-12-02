@@ -1,6 +1,7 @@
 package com.erik;
 
-import java.util.List;
+import com.erik.day01.Day01;
+import com.erik.day02.Day02;
 
 public class Main {
 

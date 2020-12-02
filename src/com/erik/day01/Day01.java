@@ -8,7 +8,7 @@ public class Day01 {
 
         for (int i = 0; i<array.length - 1; i++) {
             int toFind = 2020 - array[i];
-            int index = Arrays.binarySearch(array, toFind);
+            int index = findValueInSubArray(array, i+1, toFind);
             if (index>=0)
                 return array[i]*array[index];
         }
@@ -21,9 +21,11 @@ public class Day01 {
         for (int i = 0; i<array.length-2; i++) {
             for (int j = i+1; j<array.length-1; j++) {
                 int toFind = 2020 - array[i] - array[j];
-                int index = Arrays.binarySearch(array,toFind);
-                if (index >= 0)
+                int index = findValueInSubArray(array, j+1, toFind);
+                if (index >= 0) {
+                    System.out.println(index);
                     return array[i]*array[j]*array[index];
+                }
             }
         }
         return -1;
@@ -39,5 +41,12 @@ public class Day01 {
         Arrays.sort(intArray);
 
         return intArray;
+    }
+
+    private int findValueInSubArray(int[] arr, int startingIndex, int toFind) {
+        int index = Arrays.binarySearch(Arrays.copyOfRange(arr, startingIndex, arr.length), toFind);
+        if (index >= 0)
+            return index + startingIndex;
+        return -1;
     }
 }

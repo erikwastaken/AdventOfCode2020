@@ -15,4 +15,16 @@ public class Day03 {
         }
         return numberOfTreesHit;
     }
+
+    public long part2(String[] grid) {
+        int[][] trajectories = { {1,1}, {3,1}, {5,1}, {7,1}, {1,2} };
+        long productOfTreesHit = 1;
+
+        for (int[] trajectory : trajectories) {
+            int result = part1(grid, trajectory[0], trajectory[1]);
+            System.out.println(result);
+            productOfTreesHit *= result;
+        }
+        return productOfTreesHit;
+    }
 }

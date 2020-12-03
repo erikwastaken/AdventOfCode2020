@@ -1,7 +1,13 @@
 package com.erik.day03;
 
 public class Day03 {
-    public int part1(String[] grid, final int trajectoryX, final int trajectoryY) {
+    private String[] grid;
+
+    public Day03(String[] grid) {
+        this.grid = grid;
+    }
+
+    public int part1(final int trajectoryX, final int trajectoryY) {
         int rowIndex = trajectoryX;
         int columnIndex = trajectoryY;
         int numberOfTreesHit = 0;
@@ -16,15 +22,12 @@ public class Day03 {
         return numberOfTreesHit;
     }
 
-    public long part2(String[] grid) {
+    public long part2() {
         int[][] trajectories = { {1,1}, {3,1}, {5,1}, {7,1}, {1,2} };
         long productOfTreesHit = 1;
 
-        for (int[] trajectory : trajectories) {
-            int result = part1(grid, trajectory[0], trajectory[1]);
-            System.out.println(result);
-            productOfTreesHit *= result;
-        }
+        for (int[] trajectory : trajectories)
+            productOfTreesHit *= part1(trajectory[0], trajectory[1]);
         return productOfTreesHit;
     }
 }

@@ -20,13 +20,13 @@ public class Day03Test {
 
     @Test
     void testPart1() {
-        Day03 day03 = new Day03();
-        Assertions.assertEquals(7, day03.part1(grid, 3,1));
+        Day03 day03 = new Day03(grid);
+        Assertions.assertEquals(7, day03.part1(3,1));
     }
 
     @Test
     void testPart2() {
-        Day03 day03 = new Day03();
-        Assertions.assertEquals(336, day03.part2(grid));
+        Day03 day03 = new Day03(grid);
+        Assertions.assertEquals(336, day03.part2());
     }
 }

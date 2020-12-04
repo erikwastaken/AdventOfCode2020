@@ -3,6 +3,7 @@ package com.erik;
 import com.erik.day01.Day01;
 import com.erik.day02.Day02;
 import com.erik.day03.Day03;
+import com.erik.day04.Day04;
 
 public class Main {
 
@@ -15,8 +16,10 @@ public class Main {
 //        Day02 day02 = new Day02();
 //        System.out.println(day02.part1(inputProvider.get("inputDay02.txt")));
 //        System.out.println(day02.part2(inputProvider.get("inputDay02.txt")));
-        Day03 day03 = new Day03(inputProvider.get("inputDay03.txt"));
-        System.out.println(day03.part1(3,1));
-        System.out.println(day03.part2());
+//        Day03 day03 = new Day03(inputProvider.get("inputDay03.txt"));
+//        System.out.println(day03.part1(3,1));
+//        System.out.println(day03.part2());
+        Day04 day04 = new Day04();
+        System.out.println(day04.part1(inputProvider.get("inputDay04.txt")));
     }
 }

@@ -25,5 +25,6 @@ public class Main {
 //        System.out.println(day04.part2());
         Day05 day05 = new Day05(inputProvider.get("inputDay05.txt"));
         System.out.println(day05.part1());
+        System.out.println(day05.part2());
     }
 }

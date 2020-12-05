@@ -1,7 +1,7 @@
 package com.erik.day04;
 
 import java.util.ArrayList;
-
+//TODO do it via regex
 public class Day04 {
     final String[] input;
 

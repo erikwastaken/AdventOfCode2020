@@ -1,7 +1,13 @@
 package com.erik.day04;
 
 import java.util.ArrayList;
+<<<<<<< HEAD
 //TODO do it via regex
+=======
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+>>>>>>> Day04
 public class Day04 {
     final String[] input;
 
@@ -104,36 +110,27 @@ public class Day04 {
     }
 
     private boolean isPassportIdValid(String passportId) {
-        if (passportId.length() != 9)
-            return false;
-        for (String letter: passportId.split("")) {
-            if (!"0123456789".contains(letter))
-                return false;
-        }
-        return true;
+        Pattern pattern = Pattern.compile("[0-9]{9}");
+        Matcher matcher = pattern.matcher(passportId);
+        if (matcher.find())
+            return true;
+        return false;
     }
 
     private boolean isEyeColorValid(String eyeColor) {
-        String[] checkValues = {"amb", "blu", "brn", "gry", "grn", "hzl", "oth"};
-        for (String value : checkValues) {
-            if (eyeColor.contains(value) && value.contains(eyeColor))
-                return true;
-        }
+        Pattern pattern = Pattern.compile("amb|blu|brn|gry|grn|hzl|oth");
+        Matcher matcher = pattern.matcher(eyeColor);
+        if (matcher.find())
+            return true;
         return false;
     }
 
     private boolean isHairColorValid(String hairColor) {
-        if (hairColor.charAt(0) != '#')
-            return false;
-        if (hairColor.length() != 7)
-            return false;
-        for (int i=1; i<hairColor.length(); i++) {
-            if ("0123456789abcdefABCDEF".contains(String.valueOf(hairColor.charAt(i)))) {
-                continue;
-            }
-            return false;
-        }
-        return true;
+        Pattern pattern = Pattern.compile("^#[0-9a-f]{6}");
+        Matcher matcher = pattern.matcher(hairColor);
+        if (matcher.find())
+            return true;
+        return false;
     }
 
     private boolean isHeightValid(String heightWithUnit) {

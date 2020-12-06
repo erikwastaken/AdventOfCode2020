@@ -1,13 +1,9 @@
 package com.erik.day04;
 
 import java.util.ArrayList;
-<<<<<<< HEAD
-//TODO do it via regex
-=======
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
->>>>>>> Day04
 public class Day04 {
     final String[] input;
 

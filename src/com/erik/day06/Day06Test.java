@@ -1,8 +1,7 @@
 package com.erik.day06;
 
 import com.erik.InputProvider;
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assertions;
 
 public class Day06Test {

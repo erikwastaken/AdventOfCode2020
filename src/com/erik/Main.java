@@ -10,8 +10,11 @@ import com.erik.day06.Day06;
 public class Main {
 
     public static void main(String[] args) {
-        InputProvider inputProvider = new InputProvider();
-
+        InputProvider inputProvider;
+        if (args.length == 0)
+            inputProvider = new InputProvider();
+        else
+            inputProvider = new InputProvider(args[0]);
 //        Day01 day01 = new Day01();
 //        System.out.println(day01.part1(inputProvider.get("inputDay01.txt")[0]));
 //        System.out.println(day01.part2(inputProvider.get("inputDay01.txt")[0]));

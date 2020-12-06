@@ -7,7 +7,15 @@ import java.util.List;
 import java.util.Scanner;
 
 public class InputProvider {
-    private static final String directoryPath = "InputFiles/";
+    private final String directoryPath;
+    public InputProvider() {
+        this.directoryPath = "InputFiles/";
+    }
+
+    public InputProvider(String inputPath) {
+        this.directoryPath = inputPath;
+    }
+
     public String[] get(String filename) {
         List<String> resultList = new ArrayList<>();
         try {

@@ -23,7 +23,6 @@ public class Day01 {
                 int toFind = 2020 - array[i] - array[j];
                 int index = findValueInSubArray(array, j+1, toFind);
                 if (index >= 0) {
-                    System.out.println(index);
                     return array[i]*array[j]*array[index];
                 }
             }

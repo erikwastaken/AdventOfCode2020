@@ -1,13 +1,12 @@
 package com.erik.day04;
 
+import com.erik.InputProvider;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class Day04Test {
     @Test
     void testPart1() {
-
-
         String[] input = {"ecl:gry pid:860033327 eyr:2020 hcl:#fffffd",
         "byr:1937 iyr:2017 cid:147 hgt:183cm",
         "",
@@ -23,8 +22,10 @@ public class Day04Test {
         "iyr:2011 ecl:brn hgt:59in"};
 
         Day04 day04 = new Day04(input);
-
         Assertions.assertEquals(2,day04.part1());
+
+        day04 = new Day04(new InputProvider().get("inputDay04.txt"));
+        Assertions.assertEquals(210, day04.part1());
     }
 
     @Test

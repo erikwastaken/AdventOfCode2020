@@ -6,6 +6,7 @@ import com.erik.day03.Day03;
 import com.erik.day04.Day04;
 import com.erik.day05.Day05;
 import com.erik.day06.Day06;
+import com.erik.day07.Day07;
 
 public class Main {
 
@@ -30,8 +31,11 @@ public class Main {
 //        Day05 day05 = new Day05(inputProvider.get("inputDay05.txt"));
 //        System.out.println(day05.part1());
 //        System.out.println(day05.part2());
-        Day06 day06 = new Day06(inputProvider.get("inputDay06.txt"));
-        System.out.println(day06.part1());
-        System.out.println(day06.part2());
+//        Day06 day06 = new Day06(inputProvider.get("inputDay06.txt"));
+//        System.out.println(day06.part1());
+//        System.out.println(day06.part2());
+        Day07 day07 = new Day07(inputProvider.get("inputDay07.txt"));
+        System.out.println(day07.part1());
+        System.out.println(day07.part2());
     }
 }

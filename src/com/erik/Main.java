@@ -11,8 +11,8 @@ public class Main {
         else
             inputProvider = new InputProvider(args[0]);
 
-        Day08 day08 = new Day08(inputProvider.get("inputDay08.txt"));
-        System.out.println(day08.part1());
-        System.out.println(day08.part2());
+        AdventDay today = new Day08(inputProvider.get("inputDay08.txt"));
+        System.out.println(today.part1());
+        System.out.println(today.part2());
     }
 }

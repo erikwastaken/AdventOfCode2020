@@ -1,10 +1,12 @@
 package com.erik.day08;
 
+import com.erik.AdventDay;
+
 import java.util.HashSet;
 import java.util.Set;
 
-public class Day08 {
-    private String[] input;
+public class Day08 implements AdventDay {
+    final private String[] input;
     private int accumulator = 0;
     private int counter = 0;
 

@@ -13,7 +13,25 @@ public class Day09 {
         return check(preambleLength);
     }
 
-    public int part2() {
+    public long part2(int preambleLength) {
+        long[] inputLongs = getLongArrayFromInput();
+        long target = check(preambleLength);
+        for (int i=0; i<inputLongs.length; i++) {
+            long sum = 0;
+            long smallest = inputLongs[i];
+            long largest = 0;
+            int counter = i;
+            while (sum < target) {
+                sum += inputLongs[counter];
+                if (inputLongs[counter] < smallest)
+                    smallest = inputLongs[counter];
+                if (inputLongs[counter] > largest)
+                    largest = inputLongs[counter];
+                counter++;
+            }
+            if (sum == target)
+                return smallest + largest;
+        }
         return -1;
     }
 

@@ -71,4 +71,32 @@ public class Day09Test {
         Day09 day09 = new Day09(new InputProvider().get("inputDay09.txt"));
         Assertions.assertEquals(466456641, day09.part1());
     }
+
+    @Test
+    void part2() {
+        String[] input = new String[]{
+                "35",
+                "20",
+                "15",
+                "25",
+                "47",
+                "40",
+                "62",
+                "55",
+                "65",
+                "95",
+                "102",
+                "117",
+                "150",
+                "182",
+                "127",
+                "219",
+                "299",
+                "277",
+                "309",
+                "576"
+        };
+        Day09 day09 = new Day09(input);
+        Assertions.assertEquals(62, day09.part2(5));
+    }
 }

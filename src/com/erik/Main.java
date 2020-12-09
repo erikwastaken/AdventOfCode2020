@@ -14,6 +14,6 @@ public class Main {
 //        AdventDay today = new Day09(inputProvider.get("inputDay09.txt"));
         Day09 today = new Day09(inputProvider.get("inputDay09.txt"));
         System.out.println(today.part1());
-//        System.out.println(today.part2());
+        System.out.println(today.part2(25));
     }
 }

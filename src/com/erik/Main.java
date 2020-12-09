@@ -1,6 +1,6 @@
 package com.erik;
 
-import com.erik.day08.Day08;
+import com.erik.day09.Day09;
 
 public class Main {
 
@@ -11,8 +11,9 @@ public class Main {
         else
             inputProvider = new InputProvider(args[0]);
 
-        AdventDay today = new Day08(inputProvider.get("inputDay08.txt"));
+//        AdventDay today = new Day09(inputProvider.get("inputDay09.txt"));
+        Day09 today = new Day09(inputProvider.get("inputDay09.txt"));
         System.out.println(today.part1());
-        System.out.println(today.part2());
+//        System.out.println(today.part2());
     }
 }

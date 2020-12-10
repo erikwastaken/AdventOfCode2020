@@ -30,7 +30,7 @@ public class Day09Test {
                 "576"
         };
         Day09 day09 = new Day09(input);
-        Assertions.assertEquals(127, day09.check(5));
+        Assertions.assertEquals(127, day09.executePart1ForPreambleLength(5));
     }
 
     @Test
@@ -63,7 +63,7 @@ public class Day09Test {
         "905",
         "1689"};
         // 784 + 905 = 1689
-        Assertions.assertNotEquals(1689, new Day09(input).check(25));
+        Assertions.assertNotEquals(1689, new Day09(input).executePart1ForPreambleLength(25));
     }
 
     @Test
@@ -97,6 +97,6 @@ public class Day09Test {
                 "576"
         };
         Day09 day09 = new Day09(input);
-        Assertions.assertEquals(62, day09.part2(5));
+        Assertions.assertEquals(62, day09.executePart2ForPreambleLength(5));
     }
 }

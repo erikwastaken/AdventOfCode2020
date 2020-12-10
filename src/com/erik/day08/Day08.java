@@ -14,7 +14,7 @@ public class Day08 implements AdventDay {
         this.input = input;
     }
 
-    public int part1() {
+    public long part1() {
         Set<Integer> seenLines = new HashSet<>();
 
         while (seenLines.add(counter)) {
@@ -40,7 +40,7 @@ public class Day08 implements AdventDay {
         }
     }
 
-    public int part2() {
+    public long part2() {
         for (int i=0; i<input.length; i++) {
             String currentStatement = buildChangedStatement(input[i]);
             if (currentStatement.length() == 0)

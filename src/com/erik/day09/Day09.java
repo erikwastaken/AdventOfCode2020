@@ -1,8 +1,10 @@
 package com.erik.day09;
 
+import com.erik.AdventDay;
+
 import java.util.Arrays;
 
-public class Day09 {
+public class Day09 implements AdventDay {
     String[] input;
     public Day09(String[] input) {
         this.input = input;
@@ -10,12 +12,17 @@ public class Day09 {
 
     public long part1() {
         final int preambleLength = 25;
-        return check(preambleLength);
+        return executePart1ForPreambleLength(preambleLength);
     }
 
-    public long part2(int preambleLength) {
+    public long part2() {
+        final int preambleLength = 25;
+        return executePart2ForPreambleLength(preambleLength);
+    }
+
+    public long executePart2ForPreambleLength(int preambleLength) {
         long[] inputLongs = getLongArrayFromInput();
-        long target = check(preambleLength);
+        long target = executePart1ForPreambleLength(preambleLength);
         for (int i=0; i<inputLongs.length; i++) {
             long sum = 0;
             long smallest = inputLongs[i];
@@ -35,7 +42,7 @@ public class Day09 {
         return -1;
     }
 
-    public long check(int preambleLength) {
+    public long executePart1ForPreambleLength(int preambleLength) {
         long[] inputLongs = getLongArrayFromInput();
 
         for (int j=preambleLength; j<inputLongs.length; j++) {

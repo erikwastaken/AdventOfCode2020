@@ -1,8 +1,10 @@
 package com.erik.day07;
 
+import com.erik.AdventDay;
+
 import java.util.*;
 
-public class Day07 {
+public class Day07 implements AdventDay {
     final private String[] input;
     int numberOfOptions = 0;
     Set<String> seenBags = new HashSet<>();
@@ -11,7 +13,7 @@ public class Day07 {
         this.input = input;
     }
 
-    public int part1() {
+    public long part1() {
         final String checkValue = "shiny gold";
         Map<String,Map<String,Integer>> rules = buildRulesFromInput();
         checkContents(rules,checkValue);

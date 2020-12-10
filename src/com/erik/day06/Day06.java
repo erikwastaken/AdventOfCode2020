@@ -11,7 +11,7 @@ public class Day06 {
         this.input = input;
     }
 
-    public int part1() {
+    public long part1() {
         ArrayList<String> groupAnswersList = getGroupAnswersAsSingleStrings();
 
         return getSumOfDistinctAnswersPerGroup(groupAnswersList);
@@ -49,7 +49,7 @@ public class Day06 {
         return groupAnswersList;
     }
 
-    public int part2() {
+    public long part2() {
         ArrayList<String> groupAnswersList = getGroupAnswersAsSingleStrings();
 
         return getSumOfAgreedAnswersPerGroup(groupAnswersList);

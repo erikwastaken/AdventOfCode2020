@@ -9,15 +9,17 @@ public class Day02Test {
 
     @Test
     void testPart1() {
-        Day02 day02 = new Day02();
-        Assertions.assertEquals(2, day02.part1(input));
-        Assertions.assertEquals(456, day02.part1(new InputProvider().get("inputDay02.txt")));
+        Day02 day02 = new Day02(input);
+        Assertions.assertEquals(2, day02.part1());
+        day02 = new Day02(new InputProvider().get("inputDay02.txt"));
+        Assertions.assertEquals(456, day02.part1());
     }
 
     @Test
     void testPart2() {
-        Day02 day02 = new Day02();
-        Assertions.assertEquals(1, day02.part2(input));
-        Assertions.assertEquals(308, day02.part2(new InputProvider().get("inputDay02.txt")));
+        Day02 day02 = new Day02(input);
+        Assertions.assertEquals(1, day02.part2());
+        day02 = new Day02(new InputProvider().get("inputDay02.txt"));
+        Assertions.assertEquals(308, day02.part2());
     }
 }

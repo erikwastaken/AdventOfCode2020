@@ -1,17 +1,19 @@
 package com.erik.day04;
 
+import com.erik.AdventDay;
+
 import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Day04 {
+public class Day04 implements AdventDay {
     final String[] input;
 
     public Day04(String[] input) {
         this.input = input;
     }
 
-    public int part1() {
+    public long part1() {
         int numberOfValidPassports = 0;
         ArrayList<String> datasets = buildDatasets(input);
 
@@ -22,7 +24,7 @@ public class Day04 {
         return numberOfValidPassports;
     }
 
-    public int part2() {
+    public long part2() {
         ArrayList<String> datasets = buildDatasets(input);
         int numberOfValidPassports = 0;
         for (String dataset : datasets) {

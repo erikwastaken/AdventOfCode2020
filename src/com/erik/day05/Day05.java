@@ -1,14 +1,16 @@
 package com.erik.day05;
 
+import com.erik.AdventDay;
+
 import java.util.Arrays;
 
-public class Day05 {
+public class Day05 implements AdventDay {
     final private String[] input;
     public Day05(String[] input) {
         this.input = input;
     }
 
-    public int part1() {
+    public long part1() {
         int maxSeatId = 0;
 
         for (int i=0; i<input.length; i++) {
@@ -21,7 +23,7 @@ public class Day05 {
         return maxSeatId;
     }
 
-    public int part2() {
+    public long part2() {
         int[] seatIds = new int[input.length];
         for (int i=0; i< input.length; i++) {
             seatIds[i] = convertToSeatId(input[i]);

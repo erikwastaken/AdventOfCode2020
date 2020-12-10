@@ -1,11 +1,18 @@
 package com.erik.day02;
 
+import com.erik.AdventDay;
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Day02 {
+public class Day02 implements AdventDay {
+    private String[] input;
 
-    public int part1(String[] input) {
+    public Day02(String[] input){
+        this.input = input;
+    }
+
+    public long part1() {
         int numberOfValidPasswords = 0;
 
         for (String data : input) {
@@ -23,7 +30,7 @@ public class Day02 {
         return numberOfValidPasswords;
     }
 
-    public int part2(String[] input) {
+    public long part2() {
         int numberOfValidPasswords = 0;
 
         for (String data : input) {

@@ -1,9 +1,17 @@
 package com.erik.day01;
 
+import com.erik.AdventDay;
+
 import java.util.Arrays;
 
-public class Day01 {
-    public int part1(String input) {
+public class Day01 implements AdventDay {
+    private String input;
+
+    public Day01(String input) {
+        this.input = input;
+    }
+
+    public long part1() {
         int[] array = convertStringToSortedIntArray(input);
 
         for (int i = 0; i<array.length - 1; i++) {
@@ -15,7 +23,7 @@ public class Day01 {
         return -1;
     }
 
-    public int part2(String input) {
+    public long part2() {
         int[] array = convertStringToSortedIntArray(input);
 
         for (int i = 0; i<array.length-2; i++) {

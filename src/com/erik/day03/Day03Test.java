@@ -22,16 +22,18 @@ public class Day03Test {
     @Test
     void testPart1() {
         Day03 day03 = new Day03(grid);
-        Assertions.assertEquals(7, day03.part1(3,1));
+        Assertions.assertEquals(7, day03.part1());
 
         day03 = new Day03(new InputProvider().get("inputDay03.txt"));
-        Assertions.assertEquals(205, day03.part1(3,1));
+        Assertions.assertEquals(205, day03.part1());
     }
 
     @Test
     void testPart2() {
         Day03 day03 = new Day03(grid);
         Assertions.assertEquals(336, day03.part2());
-        // no test case with actual input, because expected result 3952146825 is too large;
+
+        day03 = new Day03(new InputProvider().get("inputDay03.txt"));
+        Assertions.assertEquals(3952146825L, day03.part2());
     }
 }

@@ -1,11 +1,13 @@
 package com.erik.day06;
 
+import com.erik.AdventDay;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
-public class Day06 {
+public class Day06 implements AdventDay {
     private String[] input;
     public Day06(String[] input) {
         this.input = input;

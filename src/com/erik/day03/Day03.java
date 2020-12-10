@@ -1,13 +1,19 @@
 package com.erik.day03;
 
-public class Day03 {
+import com.erik.AdventDay;
+
+public class Day03 implements AdventDay {
     private String[] grid;
 
     public Day03(String[] grid) {
         this.grid = grid;
     }
 
-    public int part1(final int trajectoryX, final int trajectoryY) {
+    public long part1() {
+        return executePart1(3,1);
+    }
+
+    private long executePart1(final int trajectoryX, final int trajectoryY) {
         int rowIndex = trajectoryX;
         int columnIndex = trajectoryY;
         int numberOfTreesHit = 0;
@@ -27,7 +33,7 @@ public class Day03 {
         long productOfTreesHit = 1;
 
         for (int[] trajectory : trajectories)
-            productOfTreesHit *= part1(trajectory[0], trajectory[1]);
+            productOfTreesHit *= executePart1(trajectory[0], trajectory[1]);
         return productOfTreesHit;
     }
 }

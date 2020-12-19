@@ -36,4 +36,10 @@ public class Day17Test {
         Day17 cut = new Day17(input);
         Assertions.assertEquals(848L, cut.part2());
     }
+
+    @Test
+    void part2WithRealInput() {
+        Day17 cut = new Day17(new InputProvider().get("inputDay17.txt"));
+        Assertions.assertEquals(2460L, cut.part2());
+    }
 }

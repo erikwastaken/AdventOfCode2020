@@ -147,9 +147,22 @@ public class Day17 {
                 else
                     space4.put(key, ACTIVE);
             }
+            removeInactiveCubes4();
         }
 
         return getNumberOfActiveCubes4();
+    }
+
+    private void removeInactiveCubes4() {
+        HashSet<String> toRemove = new HashSet<>();
+        for (String key : space4.keySet()) {
+            if (space4.get(key).equals(INACTIVE)) {
+                toRemove.add(key);
+            }
+        }
+        for (String key : toRemove) {
+            space4.remove(key);
+        }
     }
 
     private long getNumberOfActiveNeighbors4(int[] p) {

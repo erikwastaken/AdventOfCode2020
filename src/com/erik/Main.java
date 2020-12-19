@@ -7,6 +7,7 @@ import com.erik.day13.Day13;
 import com.erik.day14.Day14;
 import com.erik.day15.Day15;
 import com.erik.day16.Day16;
+import com.erik.day18.Day18;
 
 public class Main {
 
@@ -17,7 +18,7 @@ public class Main {
         else
             inputProvider = new InputProvider(args[0]);
 
-        AdventDay today = new Day16(inputProvider.get("inputDay16.txt"));
+        AdventDay today = new Day18(inputProvider.get("inputDay18.txt"));
         System.out.println(today.part1());
         System.out.println(today.part2());
     }

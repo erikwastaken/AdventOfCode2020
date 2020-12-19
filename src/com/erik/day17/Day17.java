@@ -23,16 +23,17 @@ public class Day17 {
 
         for (int cycle = 1; cycle <=6; cycle++) {
             HashSet<String> toFlip = new HashSet<>();
-
             HashSet<String> coordinates = new HashSet<>();
+
             for (String key : space.keySet()) {
                 int[] c = getCoordinatesForKey(key);
-                coordinates.add(getKeyForCoordinates(c[0] + 1, c[1], c[2]));
-                coordinates.add(getKeyForCoordinates(c[0] - 1, c[1], c[2]));
-                coordinates.add(getKeyForCoordinates(c[0], c[1] + 1, c[2]));
-                coordinates.add(getKeyForCoordinates(c[0], c[1] - 1, c[2]));
-                coordinates.add(getKeyForCoordinates(c[0], c[1], c[2] + 1));
-                coordinates.add(getKeyForCoordinates(c[0], c[1], c[2] - 1));
+                for (int i = -1; i<=1; i++) {
+                    for (int j = -1; j<=1; j++) {
+                        for (int k = -1; k<=1; k++) {
+                            coordinates.add(getKeyForCoordinates(c[0]+i, c[1]+j, c[2]+k));
+                        }
+                    }
+                }
             }
 
             for (String s : coordinates) {
@@ -61,11 +62,7 @@ public class Day17 {
             }
         }
 
-        long activeCubes = 0;
-        for (String value : space.values())
-            if (value.equals(ACTIVE))
-                activeCubes++;
-        return activeCubes;
+        return getNumberOfActiveCubes();
     }
 
 
@@ -84,6 +81,13 @@ public class Day17 {
         return result;
     }
 
+    private long getNumberOfActiveCubes() {
+        long activeCubes = 0;
+        for (String value : space.values())
+            if (value.equals(ACTIVE))
+                activeCubes++;
+        return activeCubes;
+    }
     private String getKeyForCoordinates(int x, int y, int z) {
         return String.format("%s,%s,%s", x, y, z);
     }
@@ -94,5 +98,9 @@ public class Day17 {
         for (int i=0; i<splits.length; i++)
             result[i] = Integer.parseInt(splits[i]);
         return result;
+    }
+
+    public long part2() {
+        return -1;
     }
 }

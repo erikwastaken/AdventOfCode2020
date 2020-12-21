@@ -22,4 +22,16 @@ public class Day21Test {
         Day21 cut = new Day21(new InputProvider().get("inputDay21.txt"));
         Assertions.assertEquals(2659L, cut.part1());
     }
+
+    @Test
+    void part2() {
+        String[] input = new String[] {
+                "mxmxvkd kfcds sqjhc nhms (contains dairy, fish)",
+                "trh fvjkl sbzzf mxmxvkd (contains dairy)",
+                "sqjhc fvjkl (contains soy)",
+                "sqjhc mxmxvkd sbzzf (contains fish)"
+        };
+        Day21 cut = new Day21(input);
+        Assertions.assertEquals("mxmxvkd,sqjhc,fvjkl", cut.part2String());
+    }
 }

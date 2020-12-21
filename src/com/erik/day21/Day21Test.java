@@ -24,7 +24,7 @@ public class Day21Test {
     }
 
     @Test
-    void part2() {
+    void part2String() {
         String[] input = new String[] {
                 "mxmxvkd kfcds sqjhc nhms (contains dairy, fish)",
                 "trh fvjkl sbzzf mxmxvkd (contains dairy)",
@@ -33,5 +33,11 @@ public class Day21Test {
         };
         Day21 cut = new Day21(input);
         Assertions.assertEquals("mxmxvkd,sqjhc,fvjkl", cut.part2String());
+    }
+
+    @Test
+    void part2StringWithRealInput() {
+        Day21 cut = new Day21(new InputProvider().get("inputDay21.txt"));
+        Assertions.assertEquals("rcqb,cltx,nrl,qjvvcvz,tsqpn,xhnk,tfqsb,zqzmzl", cut.part2String());
     }
 }

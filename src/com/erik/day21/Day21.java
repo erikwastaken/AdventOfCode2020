@@ -48,8 +48,11 @@ public class Day21 implements AdventDay {
         long counter = 0;
         for (String ingredient : notAllergens) {
             for (String line : input) {
-                if (line.contains(ingredient))
-                    counter++;
+                // prevent miscount with line.contains(...), as ingredients might be substrings of other ingredients;
+                for (String s : line.split(" \\(contains ")[0].split(" ")) {
+                    if (s.equals(ingredient))
+                        counter++;
+                }
             }
         }
         return counter;

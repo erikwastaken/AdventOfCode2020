@@ -20,6 +20,6 @@ public class Day21Test {
     @Test
     void part1WithRealInput() {
         Day21 cut = new Day21(new InputProvider().get("inputDay21.txt"));
-        Assertions.assertTrue(2670L > cut.part1());
+        Assertions.assertEquals(2659L, cut.part1());
     }
 }

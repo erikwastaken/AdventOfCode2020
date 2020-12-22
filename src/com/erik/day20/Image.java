@@ -2,7 +2,7 @@ package com.erik.day20;
 
 public class Image {
 
-    private long uuid;
+    private final long uuid;
     private String top;
     private String bottom;
     private String left;
@@ -27,6 +27,18 @@ public class Image {
 
     public boolean sharesEdgeWith(Image oim) {
         return this.bottom.equals(oim.getTop()) || this.top.equals(oim.getBottom()) || this.left.equals(oim.getRight()) || this.right.equals(oim.getLeft());
+    }
+
+    public void rotateLeft() {
+        String oldTop = this.top;
+        this.top = this.right;
+        this.right = new StringBuilder(this.bottom).reverse().toString();
+        this.bottom = this.left;
+        this.left = new StringBuilder(oldTop).reverse().toString();
+    }
+
+    public boolean equals(Image img) {
+        return this.top.equals(img.getTop()) && this.bottom.equals(img.getBottom()) && this.left.equals(img.getLeft()) && this.right.equals(img.getRight());
     }
 
     public long getUuid() {

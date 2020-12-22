@@ -74,4 +74,38 @@ public class ImageTest {
         Assertions.assertTrue(i1.sharesEdgeWith(i2));
     }
 
+    @Test
+    void equalReturnsTrueForIdenticalImagesWithIdenticalEdges() {
+        Image i1 = new Image(new String[] {
+                "Tile 1:",
+                "#.#",
+                "..#",
+                "#.."
+        });
+        Image i2 = new Image(new String[] {
+                "Tile 2:",
+                "#.#",
+                ".##",
+                "#.."
+        });
+        Assertions.assertTrue(i1.equals(i2));
+    }
+
+    @Test
+    void rotateOnce() {
+        Image i1 = new Image(new String[] {
+                "Tile 1:",
+                "..#",
+                "..#",
+                "#.."
+        });
+        Image i2 = new Image(new String[] {
+                "Tile 2:",
+                "##.",
+                "...",
+                "..#"
+        });
+        i1.rotateLeft();
+        Assertions.assertTrue(i1.equals(i2));
+    }
 }

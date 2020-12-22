@@ -41,13 +41,27 @@ public class Image {
         return this.top.equals(img.getTop()) && this.bottom.equals(img.getBottom()) && this.left.equals(img.getLeft()) && this.right.equals(img.getRight());
     }
 
+    public void flipVertically() {
+        String oldTop = this.top;
+        this.top = this.bottom;
+        this.right = new StringBuilder(this.right).reverse().toString();
+        this.bottom = oldTop;
+        this.left = new StringBuilder(left).reverse().toString();
+    }
+
+    public void flipHorizontally() {
+        String oldRight = this.right;
+        this.top = new StringBuilder(this.top).reverse().toString();
+        this.right = this.left;
+        this.bottom = new StringBuilder(this.bottom).reverse().toString();
+        this.left = oldRight;
+    }
+
     public long getUuid() {
         return uuid;
     }
 
-    public String getTop() {
-        return top;
-    }
+    public String getTop() { return top; }
 
     public String getBottom() {
         return bottom;

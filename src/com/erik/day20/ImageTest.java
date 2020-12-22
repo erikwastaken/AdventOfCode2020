@@ -108,4 +108,61 @@ public class ImageTest {
         i1.rotateLeft();
         Assertions.assertTrue(i1.equals(i2));
     }
+
+    @Test
+    void rotate4Times_ProducesSameImage() {
+        Image i1 = new Image(new String[] {
+                "Tile 1:",
+                "..#",
+                "..#",
+                "#.."
+        });
+        Image ex = new Image(new String[] {
+                "Tile 1:",
+                "..#",
+                "..#",
+                "#.."
+        });
+        for (int i=0; i<4; i++)
+            i1.rotateLeft();
+        Assertions.assertTrue(i1.equals(ex));
+    }
+
+    @Test
+    void flipVertically() {
+        Image i1 = new Image(new String[] {
+                "Tile 1:",
+                "..#",
+                "..#",
+                "#.."
+        });
+        Image ex = new Image(new String[] {
+                "Tile 1:",
+                "#..",
+                "..#",
+                "..#"
+        });
+
+        i1.flipVertically();
+        Assertions.assertTrue(i1.equals(ex));
+    }
+
+    @Test
+    void flipHorizontally() {
+        Image i1 = new Image(new String[] {
+                "Tile 1:",
+                "..#",
+                "..#",
+                "#.."
+        });
+        Image ex = new Image(new String[] {
+                "Tile 1:",
+                "#..",
+                "#..",
+                "..#"
+        });
+
+        i1.flipHorizontally();
+        Assertions.assertTrue(i1.equals(ex));
+    }
 }

@@ -2,8 +2,11 @@ package com.erik.day21;
 
 import com.erik.AdventDay;
 
-import java.lang.reflect.Array;
-import java.util.*;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Day21 implements AdventDay {
     String[] input;
@@ -43,8 +46,8 @@ public class Day21 implements AdventDay {
         for (String s : input) {
             // separate ingredient jibberish from allergens
             String[] splits = s.split(" \\(contains ");
-            String[] ings = splits[0].split(" ");
-            Collections.addAll(ingredients, ings);
+            String[] ingredients = splits[0].split(" ");
+            Collections.addAll(this.ingredients, ingredients);
 
             String[] allergens = splits[1].split(", ");
             // remove the ) on the last allergen;
@@ -52,14 +55,15 @@ public class Day21 implements AdventDay {
 
             for (String a : allergens) {
                 if (possibleIngredientsForAllergen.containsKey(a)) {
-                    possibleIngredientsForAllergen.get(a).retainAll(new HashSet<>(Arrays.asList(ings)));
+                    possibleIngredientsForAllergen.get(a).retainAll(new HashSet<>(Arrays.asList(ingredients)));
                 } else {
-                    possibleIngredientsForAllergen.put(a, new HashSet<>(Arrays.asList(ings)));
+                    possibleIngredientsForAllergen.put(a, new HashSet<>(Arrays.asList(ingredients)));
                 }
             }
         }
     }
 
+    // expected result of part2 is a string this time; keep the method for compliance with interface;
     public long part2() {
         return -1;
     }

@@ -80,4 +80,8 @@ public class Day20 {
         }
         return result;
     }
+
+    public long part2() {
+        return -1;
+    }
 }

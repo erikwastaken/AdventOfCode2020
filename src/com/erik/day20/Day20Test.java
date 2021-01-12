@@ -1,5 +1,6 @@
 package com.erik.day20;
 
+import com.erik.InputProvider;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -113,9 +114,16 @@ public class Day20Test {
                 "#.#####.##",
                 "..#.###...",
                 "..#.......",
-                "..#.###..."
+                "..#.###...",
+                ""
         };
         Day20 cut = new Day20(input);
         Assertions.assertEquals(20899048083289L, cut.part1());
+    }
+
+    @Test
+    void part1WithRealInput() {
+        Day20 cut = new Day20(new InputProvider().get("inputDay20.txt"));
+        Assertions.assertEquals(63187742854073L, cut.part1());
     }
 }

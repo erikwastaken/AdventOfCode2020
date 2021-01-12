@@ -1,5 +1,9 @@
 package com.erik.day20;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class Image {
 
     private final long uuid;
@@ -7,6 +11,7 @@ public class Image {
     private String bottom;
     private String left;
     private String right;
+    private String[] wholeImage;
 
     public Image(String[] input) {
         this.uuid = Long.parseLong(input[0].substring(5,input[0].length()-1));
@@ -23,6 +28,11 @@ public class Image {
         }
         this.left = l.toString();
         this.right = r.toString();
+
+        if (input[0].startsWith("Tile"))
+            wholeImage = Arrays.copyOfRange(input,1,input.length);
+        else
+            wholeImage = input.clone();
     }
 
     public boolean sharesEdgeWith(Image oim) {
@@ -74,4 +84,6 @@ public class Image {
     public String getRight() {
         return right;
     }
+
+    public String[] getWholeImage() { return wholeImage; }
 }

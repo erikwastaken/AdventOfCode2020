@@ -165,4 +165,20 @@ public class ImageTest {
         i1.flipHorizontally();
         Assertions.assertTrue(i1.equals(ex));
     }
+
+    @Test
+    void wholeImageCorrectlyParsed() {
+        Image i1 = new Image(new String[] {
+                "Tile 1:",
+                "..#",
+                "..#",
+                "#.."
+        });
+        String[] ex = new String[] {
+                "..#",
+                "..#",
+                "#.."
+        };
+        Assertions.assertArrayEquals(ex,i1.getWholeImage());
+    }
 }

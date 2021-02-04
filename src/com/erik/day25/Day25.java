@@ -1,12 +1,19 @@
 package com.erik.day25;
 
-public class Day25 {
+import com.erik.AdventDay;
+
+public class Day25 implements AdventDay {
     private final long SUBJECT_NUMBER = 7;
     private final long DIVISOR = 20201227;
     private final long CARD_KEY;
     private final long DOOR_KEY;
 
     public Day25(String[] input) {
+        this.CARD_KEY = Long.parseLong(input[0]);
+        this.DOOR_KEY = Long.parseLong(input[1]);
+    }
+    public Day25(String inputStr) {
+        String[] input = inputStr.split("\n");
         this.CARD_KEY = Long.parseLong(input[0]);
         this.DOOR_KEY = Long.parseLong(input[1]);
     }
@@ -23,6 +30,8 @@ public class Day25 {
         return transform(cardLoopSize, DOOR_KEY);
     }
 
+    public long part2() { return -1;
+    }
     private long transform(final long loopSize, final long subjectNumber) {
         long value;
         value = 1;

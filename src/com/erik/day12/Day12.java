@@ -20,6 +20,7 @@ public class Day12 implements AdventDay {
     public Day12(String[] input) {
         this.input = input;
     }
+    public Day12(String inputStr) { this.input = inputStr.split("\n"); }
 
     public void resetState() {
         this.currentDirection = EAST;

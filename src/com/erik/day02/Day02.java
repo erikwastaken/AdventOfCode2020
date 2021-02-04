@@ -6,11 +6,12 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Day02 implements AdventDay {
-    private String[] input;
+    private final String[] input;
 
     public Day02(String[] input){
         this.input = input;
     }
+    public Day02(String inputStr) { this.input = inputStr.split("\n"); }
 
     public long part1() {
         int numberOfValidPasswords = 0;

@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 
 public class Day11Test {
     @Test
-    void part1() {
+    void part1() throws InputProvider.FileError {
         String[] input = new String[] {
             "L.LL.LL.LL",
             "LLLLLLL.LL",
@@ -22,7 +22,7 @@ public class Day11Test {
         Day11 day11 = new Day11(input);
         Assertions.assertEquals(37, day11.part1());
 
-        day11 = new Day11(new InputProvider().get("inputDay11.txt"));
+        day11 = new Day11(new InputProvider().getAsString("InputFiles/inputDay11.txt"));
         Assertions.assertEquals(2303, day11.part1());
     }
 

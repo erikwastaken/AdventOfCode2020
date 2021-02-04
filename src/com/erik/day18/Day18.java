@@ -10,6 +10,9 @@ public class Day18 implements AdventDay {
     public Day18(String[] input) {
         this.input = input;
     }
+    public Day18(String inputStr) {
+        this.input = inputStr.split("\n");
+    }
 
     public long part1() {
         long sum = 0;

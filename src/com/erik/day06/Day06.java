@@ -12,6 +12,7 @@ public class Day06 implements AdventDay {
     public Day06(String[] input) {
         this.input = input;
     }
+    public Day06(String inputStr) { this.input = inputStr.split("\n"); }
 
     public long part1() {
         ArrayList<String> groupAnswersList = getGroupAnswersAsSingleStrings();

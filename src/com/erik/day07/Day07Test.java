@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 
 public class Day07Test {
     @Test
-    void part1() {
+    void part1() throws InputProvider.FileError {
         String[] input = {"light red bags contain 1 bright white bag, 2 muted yellow bags.",
                 "dark orange bags contain 3 bright white bags, 4 muted yellow bags.",
                 "bright white bags contain 1 shiny gold bag.",
@@ -19,7 +19,7 @@ public class Day07Test {
         Day07 day07 = new Day07(input);
         Assertions.assertEquals(4, day07.part1());
 
-        day07 = new Day07(new InputProvider().get("inputDay07.txt"));
+        day07 = new Day07(new InputProvider().getAsString("InputFiles/inputDay07.txt"));
         Assertions.assertEquals(378, day07.part1());
     }
 

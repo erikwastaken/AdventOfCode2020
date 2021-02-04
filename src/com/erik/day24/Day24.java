@@ -1,8 +1,10 @@
 package com.erik.day24;
 
+import com.erik.AdventDay;
+
 import java.util.*;
 
-public class Day24 {
+public class Day24 implements AdventDay {
     private static final char NORTH = 'n';
     private static final char SOUTH = 's';
     private static final char EAST = 'e';
@@ -20,6 +22,11 @@ public class Day24 {
     private final Vector3[] instructions;
     private final Set<Vector3> flippedTiles = new HashSet<>();
     public Day24(String[] input) {
+        this.instructions = parseInput(input);
+        flipTiles();
+    }
+    public Day24(String inputStr) {
+        String[] input = inputStr.split("\n");
         this.instructions = parseInput(input);
         flipTiles();
     }

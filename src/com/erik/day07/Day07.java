@@ -12,6 +12,7 @@ public class Day07 implements AdventDay {
     public Day07(String[] input) {
         this.input = input;
     }
+    public Day07(String inputStr) { this.input = inputStr.split("\n"); }
 
     public long part1() {
         final String checkValue = "shiny gold";

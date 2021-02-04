@@ -28,6 +28,23 @@ public class Day16 implements AdventDay {
         this.nearbyTickets = Arrays.copyOfRange(input, separators.get(1) + 2, input.length);
         this.ranges = buildRanges();
     }
+    public Day16(String inputStr) {
+        String[] input = inputStr.split("\n");
+        ArrayList<Integer> separators = new ArrayList<>();
+        for (int i=0; i<input.length; i++) {
+            if (input[i].length() == 0)
+                separators.add(i);
+        }
+
+        for (int i=0; i<separators.get(0); i++) {
+            String[] splits = input[i].split(": ");
+            this.rules.put(splits[0], splits[1]);
+        }
+
+        this.myTicket = input[separators.get(0) + 2];
+        this.nearbyTickets = Arrays.copyOfRange(input, separators.get(1) + 2, input.length);
+        this.ranges = buildRanges();
+    }
 
     public long part1() {
         return getTotalRateOfError();

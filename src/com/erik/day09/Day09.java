@@ -9,6 +9,7 @@ public class Day09 implements AdventDay {
     public Day09(String[] input) {
         this.input = input;
     }
+    public Day09(String inputStr) { this.input = inputStr.split("\n"); }
 
     public long part1() {
         final int preambleLength = 25;

@@ -8,6 +8,7 @@ public class Day03 implements AdventDay {
     public Day03(String[] grid) {
         this.grid = grid;
     }
+    public Day03(String inputStr) { this.grid = inputStr.split("\n"); }
 
     public long part1() {
         return executePart1(3,1);

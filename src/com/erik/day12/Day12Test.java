@@ -20,8 +20,8 @@ public class Day12Test {
     }
 
     @Test
-    void part1WithRealInput() {
-        Day12 day12 = new Day12(new InputProvider().get("inputDay12.txt"));
+    void part1WithRealInput() throws InputProvider.FileError {
+        Day12 day12 = new Day12(new InputProvider().getAsString("InputFiles/inputDay12.txt"));
         Assertions.assertEquals(364, day12.part1());
     }
 

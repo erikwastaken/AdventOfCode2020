@@ -17,6 +17,10 @@ public class Day21 implements AdventDay {
         this.input = input;
         parseInput(input);
     }
+    public Day21(String inputStr) {
+        this.input = inputStr.split("\n");
+        parseInput(input);
+    }
 
     public long part1() {
         HashSet<String> notAllergens = new HashSet<>(ingredients);

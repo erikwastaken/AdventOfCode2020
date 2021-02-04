@@ -27,6 +27,17 @@ public class Day13 implements AdventDay {
             this.bigCongruencesForModulo.put(BigInteger.valueOf(id), BigInteger.valueOf(value));
         }
     }
+    public Day13(String inputStr) {
+        String[] input = inputStr.split("\n");
+        this.earliestDeparture = Integer.parseInt(input[0]);
+        this.offsetsForBusIds = buildIdMap(input[1].split(","));
+        for (Long id : offsetsForBusIds.keySet()) {
+            long value = (id - offsetsForBusIds.get(id)) % id;
+            if (value < 0)
+                value += id;
+            this.bigCongruencesForModulo.put(BigInteger.valueOf(id), BigInteger.valueOf(value));
+        }
+    }
 
     public long part1() {
         long minWaitTime = earliestDeparture;

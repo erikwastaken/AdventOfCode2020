@@ -19,6 +19,13 @@ public class Day11 implements AdventDay {
         this.GRID_ROWS = grid.length;
         this.GRID_COLUMNS = grid[0].length;
     }
+    public Day11(String inputStr) {
+        this.input = inputStr.split("\n");
+        this.grid = new String[input.length][input[0].length()];
+
+        this.GRID_ROWS = grid.length;
+        this.GRID_COLUMNS = grid[0].length;
+    }
 
     public long part1() {
         buildGrid();

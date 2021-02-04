@@ -6,20 +6,19 @@ public class AdventDayFactory {
     public static AdventDay createByName(String name, String input) throws IllegalClassName {
         try {
             Class cls = Class.forName(name);
-            Class partypes[] = new Class[1];
-            partypes[0] = Class.forName("java.lang.String");
-            Constructor ct = cls.getConstructor(partypes);
-            Object arglist[] = new Object[1];
-            arglist[0] = input;
-            Object retobj = ct.newInstance(arglist);
+            Class[] parameterTypes = new Class[1];
+            parameterTypes[0] = Class.forName("java.lang.String");
+            Constructor ct = cls.getConstructor(parameterTypes);
+            Object[] argList = new Object[1];
+            argList[0] = input;
+            Object retObj = ct.newInstance(argList);
 
-            if (retobj instanceof AdventDay) {
-                return (AdventDay) retobj;
+            if (retObj instanceof AdventDay) {
+                return (AdventDay) retObj;
             }
             throw new IllegalClassName();
         }
         catch (Throwable e) {
-            System.err.println(e);
             throw new IllegalClassName();
         }
     }

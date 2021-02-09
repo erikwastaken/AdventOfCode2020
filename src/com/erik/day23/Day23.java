@@ -1,17 +1,19 @@
 package com.erik.day23;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
+import com.erik.AdventDay;
 
-public class Day23 {
+public class Day23 implements AdventDay {
     private final Circle cups;
 
     public Day23(String input) {
         cups = new Circle(input);
     }
 
-    public String part1(int moves) {
+    public long part1() {
+        return processPart1(100);
+    }
+    
+    public long processPart1(int moves) {
         for (int i=0; i<moves; i++) {
             try {
                 int currentCup = cups.get(0);
@@ -31,6 +33,10 @@ public class Day23 {
             }
         }
         cups.makeCurrent(cups.indexOf("1"));
-        return cups.getElements().substring(1);
+        return Long.parseLong(cups.getElements().substring(1));
+    }
+
+    public long part2() {
+        return -1;
     }
 }

@@ -4,11 +4,13 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
+
 public class CircleTest {
     private Circle cut;
     @BeforeEach
     void setup() {
-        String input = "1234";
+        List<Integer> input = List.of(1,2,3,4);
         this.cut = new Circle(input);
     }
 
@@ -19,7 +21,7 @@ public class CircleTest {
 
     @Test
     void sizeOf3ElementCircle_Is3() {
-        String input = "123";
+        List<Integer> input = List.of(1,2,3);
         Circle cut = new Circle(input);
         Assertions.assertEquals(3, cut.size());
     }
@@ -38,14 +40,14 @@ public class CircleTest {
     void stashElementsFromTheCircle() throws Exception {
         cut.stash(1,3);
         Assertions.assertEquals(2, cut.size());
-        Assertions.assertEquals("14", cut.getElements());
+        Assertions.assertEquals(List.of(1,4), cut.getElements());
     }
 
     @Test
     void stashLastElement() throws Exception {
         cut.stash(3,4);
         Assertions.assertEquals(3,cut.size());
-        Assertions.assertEquals("123",cut.getElements());
+        Assertions.assertEquals(List.of(1,2,3),cut.getElements());
 
     }
 
@@ -59,7 +61,7 @@ public class CircleTest {
         cut.stash(1,3);
         cut.retrieveStash();
         Assertions.assertEquals(4,cut.size());
-        Assertions.assertEquals("1234", cut.getElements());
+        Assertions.assertEquals(List.of(1,2,3,4), cut.getElements());
     }
 
     @Test
@@ -67,7 +69,7 @@ public class CircleTest {
         cut.stash(1,3);
         cut.insertStash(0);
         Assertions.assertEquals(4,cut.size());
-        Assertions.assertEquals("2314", cut.getElements());
+        Assertions.assertEquals(List.of(2,3,1,4), cut.getElements());
     }
 
     @Test
@@ -79,33 +81,40 @@ public class CircleTest {
     @Test
     void makeElementAtIndexFirstElement() {
         cut.makeCurrent(3);
-        Assertions.assertEquals("4123", cut.getElements());
+        Assertions.assertEquals(List.of(4,1,2,3), cut.getElements());
     }
 
     @Test
     void contains_ReturnsTrueIfContained() {
-        Assertions.assertTrue(cut.contains("3"));
+        Assertions.assertTrue(cut.contains(3));
     }
 
     @Test
     void contains_DoesNotConsiderStash() throws Exception {
         cut.stash(2,3);
-        Assertions.assertFalse(cut.contains("3"));
+        Assertions.assertFalse(cut.contains(3));
     }
 
     @Test
     void indexOf() {
-        Assertions.assertEquals(2, cut.indexOf("3"));
+        Assertions.assertEquals(2, cut.indexOf(3));
     }
 
     @Test
     void max() {
-        Assertions.assertEquals("4", cut.max());
+        Assertions.assertEquals(4, cut.max());
     }
 
     @Test
     void max_IgnoresStash() throws Exception {
         cut.stash(3);
-        Assertions.assertEquals("3", cut.max());
+        Assertions.assertEquals(3, cut.max());
+    }
+
+    @Test
+    void canBeParsedToString() {
+        List<Integer> input = List.of(1,2,3);
+        Circle cut = new Circle(input);
+        Assertions.assertEquals("123",cut.toString());
     }
 }

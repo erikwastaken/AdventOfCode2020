@@ -63,7 +63,7 @@ public class Circle {
         return elements.indexOf(s);
     }
 
-    public long max() {
+    public int max() {
         int largest = 0;
         for (int c : elements){
             if (c > largest) {

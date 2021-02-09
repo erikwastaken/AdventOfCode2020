@@ -1,5 +1,6 @@
 package com.erik.day23;
 
+import com.erik.InputProvider;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -73,13 +74,19 @@ public class Day23Test {
     void part1WithRealInput_100Moves() {
         List<Integer> input = List.of(3,8,9,5,4,7,6,1,2);
         Day23 cut = new Day23(input);
-        Assertions.assertEquals(45286397L, cut.processPart1(100));
+        Assertions.assertEquals(45286397L, cut.part1());
     }
 
     @Test
     void part2() {
-        List<Integer> input = List.of(3,8,9,1,2,5,4,6,7);
+        String input = "389125467\n";
         Day23 cut = new Day23(input);
         Assertions.assertEquals(149245887792L, cut.part2());
+    }
+
+    @Test
+    void part2WithRealInput() throws InputProvider.FileError {
+        Day23 cut = new Day23(new InputProvider().getAsString("InputFiles/inputDay23.txt"));
+        Assertions.assertEquals(836763710L, cut.part2());
     }
 }

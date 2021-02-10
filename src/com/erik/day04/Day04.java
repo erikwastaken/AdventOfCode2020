@@ -12,6 +12,7 @@ public class Day04 implements AdventDay {
     public Day04(String[] input) {
         this.input = input;
     }
+    public Day04(String inputStr) { this.input = inputStr.split("\n"); }
 
     public long part1() {
         int numberOfValidPassports = 0;

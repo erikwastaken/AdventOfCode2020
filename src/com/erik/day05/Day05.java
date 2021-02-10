@@ -9,6 +9,7 @@ public class Day05 implements AdventDay {
     public Day05(String[] input) {
         this.input = input;
     }
+    public Day05(String inputStr) { this.input = inputStr.split("\n"); }
 
     public long part1() {
         int maxSeatId = 0;

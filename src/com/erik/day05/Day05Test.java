@@ -6,12 +6,12 @@ import org.junit.jupiter.api.Assertions;
 
 public class Day05Test {
     @Test
-    public void testPart1() {
+    public void testPart1() throws InputProvider.FileError {
         String[] input = {"BFFFBBFRRR", "FFFBBBFRRR", "BBFFBBFRLL"};
         Day05 day05 = new Day05(input);
         Assertions.assertEquals(820, day05.part1());
 
-        day05 = new Day05(new InputProvider().get("inputDay05.txt"));
+        day05 = new Day05(new InputProvider().getAsString("InputFiles/inputDay05.txt"));
         Assertions.assertEquals(848, day05.part1());
     }
 

@@ -1,9 +1,11 @@
 package com.erik.day17;
 
+import com.erik.AdventDay;
+
 import java.util.HashMap;
 import java.util.HashSet;
 
-public class Day17 {
+public class Day17 implements AdventDay {
     private static final String ACTIVE = "#";
     private static final String INACTIVE = ".";
 
@@ -19,7 +21,16 @@ public class Day17 {
             }
         }
     }
-
+    public Day17(String inputStr) {
+        String[] input = inputStr.split("\n");
+        for (int i=0; i<input.length; i++) {
+            String[] splits = input[i].split("");
+            for (int j=0; j< splits.length; j++) {
+                space.put(getKeyForCoordinates(i,j,0),splits[j]);
+                space4.put(getKeyForCoordinates(i,j,0,0),splits[j]);
+            }
+        }
+    }
     public long part1() {
 
         for (int cycle = 1; cycle <=6; cycle++) {

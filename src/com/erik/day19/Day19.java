@@ -14,6 +14,11 @@ public class Day19 implements AdventDay {
         rules = buildRules(input);
         messages = buildMessages(input);
     }
+    public Day19(String inputStr) {
+        String[] input = inputStr.split("\n");
+        rules = buildRules(input);
+        messages = buildMessages(input);
+    }
 
     private String[] buildMessages(String[] input) {
         int start = -1;

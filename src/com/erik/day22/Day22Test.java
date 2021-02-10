@@ -27,8 +27,8 @@ public class Day22Test {
     }
 
     @Test
-    void part1WithRealInput() {
-        Day22 cut = new Day22(new InputProvider().get("inputDay22.txt"));
+    void part1WithRealInput() throws InputProvider.FileError {
+        Day22 cut = new Day22(new InputProvider().getAsString("InputFiles/inputDay22.txt"));
         Assertions.assertEquals(35818L, cut.part1());
     }
 

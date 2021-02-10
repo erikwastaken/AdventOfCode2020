@@ -13,6 +13,7 @@ public class Day08 implements AdventDay {
     public Day08(String[] input) {
         this.input = input;
     }
+    public Day08(String inputStr) { this.input = inputStr.split("\n"); }
 
     public long part1() {
         Set<Integer> seenLines = new HashSet<>();

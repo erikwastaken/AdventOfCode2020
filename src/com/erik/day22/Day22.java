@@ -1,12 +1,35 @@
 package com.erik.day22;
 
+import com.erik.AdventDay;
+
 import java.util.*;
 
-public class Day22 {
+public class Day22 implements AdventDay {
     private final Queue<Integer> player1 = new LinkedList<>();
     private final Queue<Integer> player2 = new LinkedList<>();
 
     public Day22(String[] input) {
+        boolean isPlayer1 = false;
+        for (String line : input) {
+            if (line.length() == 0)
+                continue;
+            if (line.contains("Player 1")) {
+                isPlayer1 = true;
+                continue;
+            }
+            if (line.contains("Player 2")) {
+                isPlayer1 = false;
+                continue;
+            }
+            if (isPlayer1) {
+                player1.add(Integer.parseInt(line));
+            } else {
+                player2.add(Integer.parseInt(line));
+            }
+        }
+    }
+    public Day22(String inputStr) {
+        String[] input = inputStr.split("\n");
         boolean isPlayer1 = false;
         for (String line : input) {
             if (line.length() == 0)

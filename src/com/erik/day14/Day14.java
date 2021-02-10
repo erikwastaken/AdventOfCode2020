@@ -14,6 +14,7 @@ public class Day14 implements AdventDay {
     public Day14(String[] input) {
         this.input = input;
     }
+    public Day14(String inputStr) { this.input = inputStr.split("\n"); }
 
     public long part1() {
         String currentMask = "";

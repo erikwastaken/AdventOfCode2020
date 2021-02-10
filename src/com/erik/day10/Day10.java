@@ -7,11 +7,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Day10 implements AdventDay {
-    private String[] input;
+    private final String[] input;
     public Day10(String[] input) {
         this.input = input;
     }
-
+    public Day10(String inputStr) { this.input = inputStr.split("\n"); }
 
     public long part1() {
         long[] inputLongs = new long[input.length+1];

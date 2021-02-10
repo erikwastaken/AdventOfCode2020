@@ -67,8 +67,8 @@ public class Day09Test {
     }
 
     @Test
-    void part1() {
-        Day09 day09 = new Day09(new InputProvider().get("inputDay09.txt"));
+    void part1() throws InputProvider.FileError {
+        Day09 day09 = new Day09(new InputProvider().getAsString("InputFiles/inputDay09.txt"));
         Assertions.assertEquals(466456641, day09.part1());
     }
 

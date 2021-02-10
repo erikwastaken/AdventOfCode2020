@@ -20,11 +20,11 @@ public class Day03Test {
     };
 
     @Test
-    void testPart1() {
+    void testPart1() throws InputProvider.FileError {
         Day03 day03 = new Day03(grid);
         Assertions.assertEquals(7, day03.part1());
 
-        day03 = new Day03(new InputProvider().get("inputDay03.txt"));
+        day03 = new Day03(new InputProvider().getAsString("InputFiles/inputDay03.txt"));
         Assertions.assertEquals(205, day03.part1());
     }
 

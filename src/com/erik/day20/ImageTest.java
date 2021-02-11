@@ -198,4 +198,73 @@ public class ImageTest {
         };
         Assertions.assertArrayEquals(ex,i1.getWholeImage());
     }
+
+    @Test
+    void recognizesRightNeighbor() {
+        Image i1 = new Image(new String[] {
+                "Tile 1:",
+                "..#",
+                "..#",
+                "#.."
+        });
+        Image i2 = new Image(new String[] {
+                "Tile 2:",
+                "#.#",
+                "#.#",
+                "..."
+        });
+        Assertions.assertTrue(i1.isLeftNeighborOf(i2));
+    }
+
+    @Test
+    void recognizesUpperNeighbor() {
+        Image i1 = new Image(new String[] {
+                "Tile 1:",
+                ".#.",
+                "..#",
+                "#.#"
+        });
+        Image i2 = new Image(new String[] {
+                "Tile 2:",
+                "#.#",
+                "#.#",
+                "..."
+        });
+        Assertions.assertTrue(i1.isUpperNeighborOf(i2));
+    }
+
+    @Test
+    void recognizesLowerNeighbor() {
+        Image i1 = new Image(new String[] {
+                "Tile 1:",
+                ".#.",
+                "..#",
+                "#.#"
+        });
+        Image i2 = new Image(new String[] {
+                "Tile 2:",
+                "#.#",
+                "#.#",
+                "..."
+        });
+        Assertions.assertTrue(i2.isLowerNeighborOf(i1));
+    }
+
+    @Test
+    void transformsToLowerNeighbor() {
+        Image i1 = new Image(new String[] {
+                "Tile 1:",
+                ".#.",
+                "..#",
+                "#.#"
+        });
+        Image i2 = new Image(new String[] {
+                "Tile 2:",
+                "...",
+                "#.#",
+                "#.#"
+        });
+        i2.transformToLowerNeighborOf(i1);
+        Assertions.assertTrue(i2.isLowerNeighborOf(i1));
+    }
 }

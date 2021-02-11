@@ -116,4 +116,44 @@ public class Image {
     }
 
     public String[] getWholeImage() { return wholeImage; }
+
+    public boolean isLeftNeighborOf(Image i2) {
+        return right.equals(i2.getLeft());
+    }
+
+
+    public boolean isUpperNeighborOf(Image i2) {
+        return bottom.equals(i2.getTop());
+    }
+
+    public boolean isLowerNeighborOf(Image i1) {
+        return top.equals(i1.getBottom());
+    }
+
+    public void transformToLowerNeighborOf(Image i1) {
+        // assumes that transformation is possible;
+        for (int i=0; i<4; i++) {
+            if (isLowerNeighborOf(i1))
+                return;
+            rotateLeft();
+        }
+        flipVertically();
+        for (int i=0; i<4; i++) {
+            if (isLowerNeighborOf(i1))
+                return;
+            rotateLeft();
+        }
+        flipHorizontally();
+        for (int i=0; i<4; i++) {
+            if (isLowerNeighborOf(i1))
+                return;
+            rotateLeft();
+        }
+        flipVertically();
+        for (int i=0; i<4; i++) {
+            if (isLowerNeighborOf(i1))
+                return;
+            rotateLeft();
+        }
+    }
 }

@@ -267,4 +267,40 @@ public class ImageTest {
         i2.transformToLowerNeighborOf(i1);
         Assertions.assertTrue(i2.isLowerNeighborOf(i1));
     }
+
+    @Test
+    void transformsToRightNeighbor() {
+        Image i1 = new Image(new String[] {
+                "Tile 1:",
+                ".#.",
+                "..#",
+                "#.#"
+        });
+        Image i2 = new Image(new String[] {
+                "Tile 2:",
+                "...",
+                "..#",
+                "#.#"
+        });
+        i2.transformToRightNeighborOf(i1);
+        Assertions.assertTrue(i1.isLeftNeighborOf(i2));
+    }
+
+    @Test
+    void transformsToLeftNeighbor() {
+        Image i1 = new Image(new String[] {
+                "Tile 1:",
+                ".#.",
+                "..#",
+                "#.#"
+        });
+        Image i2 = new Image(new String[] {
+                "Tile 2:",
+                "...",
+                "..#",
+                "#.#"
+        });
+        i2.transformToLeftNeighborOf(i1);
+        Assertions.assertTrue(i2.isLeftNeighborOf(i1));
+    }
 }

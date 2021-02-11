@@ -156,4 +156,58 @@ public class Image {
             rotateLeft();
         }
     }
+
+    public void transformToRightNeighborOf(Image i1) {
+        // assumes that transformation is possible;
+        for (int i=0; i<4; i++) {
+            if (i1.isLeftNeighborOf(this))
+                return;
+            rotateLeft();
+        }
+        flipVertically();
+        for (int i=0; i<4; i++) {
+            if (i1.isLeftNeighborOf(this))
+                return;
+            rotateLeft();
+        }
+        flipHorizontally();
+        for (int i=0; i<4; i++) {
+            if (i1.isLeftNeighborOf(this))
+                return;
+            rotateLeft();
+        }
+        flipVertically();
+        for (int i=0; i<4; i++) {
+            if (i1.isLeftNeighborOf(this))
+                return;
+            rotateLeft();
+        }
+    }
+
+    public void transformToLeftNeighborOf(Image i1) {
+        // assumes that transformation is possible;
+        for (int i=0; i<4; i++) {
+            if (this.isLeftNeighborOf(i1))
+                return;
+            rotateLeft();
+        }
+        flipVertically();
+        for (int i=0; i<4; i++) {
+            if (this.isLeftNeighborOf(i1))
+                return;
+            rotateLeft();
+        }
+        flipHorizontally();
+        for (int i=0; i<4; i++) {
+            if (this.isLeftNeighborOf(i1))
+                return;
+            rotateLeft();
+        }
+        flipVertically();
+        for (int i=0; i<4; i++) {
+            if (this.isLeftNeighborOf(i1))
+                return;
+            rotateLeft();
+        }
+    }
 }

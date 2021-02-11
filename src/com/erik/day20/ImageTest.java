@@ -75,7 +75,24 @@ public class ImageTest {
     }
 
     @Test
-    void equalReturnsTrueForIdenticalImagesWithIdenticalEdges() {
+    void equalReturnsTrueForIdenticalImages() {
+        Image i1 = new Image(new String[] {
+                "Tile 1:",
+                "#.#",
+                "..#",
+                "#.."
+        });
+        Image i2 = new Image(new String[] {
+                "Tile 2:",
+                "#.#",
+                "..#",
+                "#.."
+        });
+        Assertions.assertTrue(i1.equals(i2));
+    }
+
+    @Test
+    void equalsReturnsFalseForNonIdenticalImages() {
         Image i1 = new Image(new String[] {
                 "Tile 1:",
                 "#.#",
@@ -88,7 +105,7 @@ public class ImageTest {
                 ".##",
                 "#.."
         });
-        Assertions.assertTrue(i1.equals(i2));
+        Assertions.assertFalse(i1.equals(i2));
     }
 
     @Test
